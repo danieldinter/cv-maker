@@ -35,8 +35,8 @@ In `src/template/<name>` different templates can be added. The `cv-maker` comes 
 
 - `npm install`: First install all dependencies
 - `npm run dev`: Runs the dev server, listens for template changes and serves the HTML to your browser.
-- `npx ts-node scripts/merge-cv.ts --instance=<name>`: Respects the configuration in `/instance/<name>/config.json` to generate a CV JSON data file in `/instance/<name>/generated/` from the JSON files provided in `/data`.
-- `npx ts-node scripts/build-and-pdf.ts --instance=<name>`: Respects the configuration in `/instance/<name>/config.json` to run a full build and output the PDF file in `/instance/<name>/generated/`. The build is a seven-step procedure containing:
+- `npx ts-node scripts/merge-cv.ts --instanceDir=<name>`: Respects the configuration in `/instance/<name>/config.json` to generate a CV JSON data file in `/instance/<name>/generated/` from the JSON files provided in `/data`.
+- `npx ts-node scripts/build-and-pdf.ts --instanceDir=<name>`: Respects the configuration in `/instance/<name>/config.json` to run a full build and output the PDF file in `/instance/<name>/generated/`. The build is a seven-step procedure containing:
 
 1. Merge of CV parts using the above mentioned merge script
 2. Validation of merged JSON against schema
