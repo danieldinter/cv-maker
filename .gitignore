@@ -137,3 +137,27 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ingore all data except example
+data
+!example/data
+
+# Ignore all instance configurations except example
+instances
+!example/instances
+
+# Ignore templates except default
+src/template/*
+!src/template/default

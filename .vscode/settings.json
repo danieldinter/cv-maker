@@ -1,0 +1,13 @@
+{
+  "prettier.documentSelectors": ["**/*.svelte"],
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.enableDebugLogs": true,
+  "editor.formatOnSave": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  },
+  "[typescript]": { 
+    "editor.defaultFormatter": "prettier.prettier-vscode" 
+  },
+  "tailwindCSS.rootFontSize": 10
+}

@@ -1,0 +1,73 @@
+@import "tailwindcss" source("../");
+@tailwind utilities;
+
+@theme {
+}
+
+@layer base {
+  body {
+    @apply text-gray-700;
+    @apply mx-auto;
+    @apply w-[21cm];
+  }
+
+  @media print {
+    body {
+      @apply w-full;
+    }
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-bold;
+    @apply uppercase;
+  }
+  h3 {
+    @apply text-lg/snug font-bold;
+  }
+  h4 {
+    @apply text-base/snug font-semibold;
+  }
+  p {
+    @apply text-base/tight;
+  }
+  li {
+    @apply text-base/tight;
+  }
+}
+
+ul.list-bullets {
+  @apply list-outside;
+  @apply p-0 m-0 ml-3;
+}
+
+ul.list-bullets li {
+  @apply p-0 m-0 pl-1;
+}
+
+ul.list-bullets li::marker {
+  @apply content-['•'];
+}
+
+ul.list-flat {
+  @apply list-none p-0 m-0;
+}
+
+ul.list-flat li {
+  @apply text-sm/tight;
+}
+
+ul.list-inline {
+  @apply list-none p-0 m-0 flex flex-wrap;
+}
+
+ul.list-inline li {
+  @apply text-sm/tight;
+}
+
+section.cover p {
+  @apply py-2;
+  @apply text-base/relaxed;
+}

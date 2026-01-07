@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cv-maker</title>
+</head>
+
+<body>
+  <h1>Templates</h1>
+  <ul id="templates">
+    <li>Loading…</li>
+  </ul>
+
+  <script>
+    async function renderTemplates() {
+      const ul = document.getElementById('templates');
+      try {
+        const res = await fetch('/api/templates');
+        if (!res.ok) throw new Error('Network response not ok');
+        const templates = await res.json();
+        ul.innerHTML = '';
+        if (!Array.isArray(templates) || templates.length === 0) {
+          ul.innerHTML = '<li>No templates found.</li>';
+          return;
+        }
+        for (const name of templates) {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `/src/template/${name}/index.html`;
+          a.textContent = name;
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
+      } catch (err) {
+        ul.innerHTML = '<li>Error loading templates. Run `npm run generate-index` to create a static index file for production.</li>';
+        // eslint-disable-next-line no-console
+        console.error('Failed to fetch /api/templates', err);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTemplates);
+  </script>
+</body>
+
+</html>
