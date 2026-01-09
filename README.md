@@ -1,4 +1,5 @@
 # cv-maker
+
 `cv-maker` is a small tool to create a PDF CV/Resume and Cover Letter created in HTML and rendered to PDF.
 
 The tool is built with Vite, TypeScript, Svelte and Puppeteer to create a Resume or Curriculum Vitae (CV) and an optional Cover Letter. The data used in the CV is saved as structured JSON data. The CV is then rendered using a template as HTML and can be accessed on the browser for preview. Using CLI scripts the HTML page can be rendered as PDF using Puppeteer.
