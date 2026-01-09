@@ -28,6 +28,10 @@ export function applyDefaults(cfg: any) {
     includeProjects: cfg.includeProjects ?? defaultConfig.includeProjects,
     includeSkills: cfg.includeSkills ?? [],
     includeLanguages: cfg.includeLanguages ?? defaultConfig.includeLanguages,
+    // Preserve an optional `overload` object from instance configs so
+    // callers (e.g. scripts/merge-cv.ts) can apply instance-specific
+    // overrides to the merged data.
+    overload: cfg.overload ?? null,
     includeCourses: cfg.includeCourses ?? [],
     showProjectStack: cfg.showProjectStack ?? defaultConfig.showProjectStack,
     separateCover: cfg.separateCover ?? defaultConfig.separateCover,
